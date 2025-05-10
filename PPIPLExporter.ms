@@ -160,7 +160,6 @@ rollout IDEnumRollout "Project Props IPL Exporter - Zen" width:360 height:480 (
         lbl_progressCount.text = ""
         btn_cancel.enabled = true
 
-        -- Don't clear matches list until we know it's a successful scan
         local tempMatches = #()
         local tempResultStrings = #()
 
@@ -181,8 +180,8 @@ rollout IDEnumRollout "Project Props IPL Exporter - Zen" width:360 height:480 (
 
             local matchString = pair[2] + ", " + pair[1] + ", 512, " +
                 floatToStr6 pos.x + ", " + floatToStr6 pos.y + ", " + floatToStr6 pos.z + ", " +
-                floatToStr6 rot.x + ", " + floatToStr6 rot.y + ", " + floatToStr6 rot.z + ", " +
-                floatToStr6 rot.w + ", -1"
+                floatToStr6 (-rot.x) + ", " + floatToStr6 rot.y + ", " + floatToStr6 rot.z + ", " +
+                floatToStr6 (-rot.w) + ", -1"
             append tempResultStrings matchString
         )
 
@@ -226,8 +225,8 @@ rollout IDEnumRollout "Project Props IPL Exporter - Zen" width:360 height:480 (
 
             local line = matchedID + ", " + obj.name + ", 512, " +
                 floatToStr6 pos.x + ", " + floatToStr6 pos.y + ", " + floatToStr6 pos.z + ", " +
-                floatToStr6 rot.x + ", " + floatToStr6 rot.y + ", " + floatToStr6 rot.z + ", " +
-                floatToStr6 rot.w + ", -1"
+                floatToStr6 (-rot.x) + ", " + floatToStr6 rot.y + ", " + floatToStr6 rot.z + ", " +
+                floatToStr6 (-rot.w) + ", -1"
             append exportLines line
         )
 
