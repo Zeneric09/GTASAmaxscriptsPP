@@ -40,15 +40,10 @@ fn isEqual q1 q2 = (
 
 -- Convert quaternion to GTA format with 4 decimal rounding
 fn quatToGTAFormat quat = (
-    local x = quat.x
-    local y = quat.y
+    local x = -quat.x
+    local y = -quat.y
     local z = -quat.z
     local w = quat.w
-
-    if x >= 0 and y >= 0 then (
-        x = -x
-        y = -y
-    )
 
     x = (ceil (x * 10000)) / 10000.0
     y = (ceil (y * 10000)) / 10000.0
