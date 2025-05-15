@@ -17,22 +17,21 @@ fn trim str = (
 
 -- Helper: round a Point3 to 3 decimals
 fn roundPosTo3 p = (
-    point3 (
-        (ceil (p.x * 1000)) / 1000.0)
-        ((ceil (p.y * 1000)) / 1000.0)
-        ((ceil (p.z * 1000)) / 1000.0)
-    )
+    point3 
+        (ceil (p.x * 1000) / 1000.0)
+        (ceil (p.y * 1000) / 1000.0)
+        (ceil (p.z * 1000) / 1000.0)
+    
 )
 
 -- Helper: round quaternion to 4 decimals
 fn roundQuat q = (
-    quat (
-        (ceil (q.x * 10000)) / 10000.0)
-        ((ceil (q.y * 10000)) / 10000.0)
-        ((ceil (q.z * 10000)) / 10000.0)
-        ((ceil (q.w * 10000)) / 10000.0)
-    )
-)
+    quat 
+        (ceil (q.x * 10000) / 10000.0)
+        (ceil (q.y * 10000) / 10000.0)
+        (ceil (q.z * 10000) / 10000.0)
+        (ceil (q.w * 10000) / 10000.0)
+ )
 
 -- Helper: compare two quaternions rounded to 4 decimals
 fn isEqual q1 q2 = (
